@@ -1,13 +1,20 @@
+import { forwardRef } from 'react'
+
 interface IProps {
     className?: string
     [x: string]: any
 }
 
-const Input: React.FC<IProps> = ({
-    className = 'input input-bordered input-primary w-full text-base',
-    ...props
-}) => {
-    return <input {...props} className={className} />
-}
+const Input = forwardRef<HTMLInputElement, IProps>(
+    (
+        {
+            className = 'input input-bordered input-primary w-full text-base',
+            ...props
+        },
+        ref
+    ) => {
+        return <input {...props} className={className} ref={ref} />
+    }
+)
 
 export default Input
