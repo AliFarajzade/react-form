@@ -3,9 +3,11 @@ import Header from './header.component'
 
 const Layout: React.FC = () => {
     return (
-        <div className="container">
+        <div className="container py-4 lg:py-20 space-y-5">
             <Header />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </div>
     )
 }
