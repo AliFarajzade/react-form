@@ -34,7 +34,6 @@ const Step1: React.FC = () => {
         resolver: yupResolver(schema),
     })
     const onSubmit: SubmitHandler<TInputs> = data => {
-        console.log(data)
         handleChangeFormData(data)
         navigate('/step-2')
     }
@@ -47,7 +46,6 @@ const Step1: React.FC = () => {
                 defaultValue={formData.firstName}
                 type="text"
                 placeholder="First Name"
-                className="input input-bordered input-primary w-full text-base"
                 {...register('firstName')}
                 isError={!!errors.firstName}
                 errorText={errors.firstName?.message}
@@ -56,7 +54,6 @@ const Step1: React.FC = () => {
                 defaultValue={formData.lastName}
                 type="text"
                 placeholder="Last Name"
-                className="input input-bordered input-primary w-full text-base"
                 {...register('lastName')}
                 isError={!!errors.lastName}
                 errorText={errors.lastName?.message}
